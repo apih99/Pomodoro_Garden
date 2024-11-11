@@ -103,7 +103,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/apihnine9)
+Your Name - [https://twitter.com/apihnine9]
 
 Project Link: [https://github.com/yourusername/pomodoro-garden](https://github.com/apih99/pomodoro-garden)
 
