@@ -7,6 +7,10 @@
 
 Pomodoro Garden is not just another timer - it's a productivity companion that grows with you! Watch your focus sessions bloom into a beautiful virtual garden while gaining insights into your productivity patterns.
 
+![Example of the home interface](screenshots/Home.PNG)  
+![Example of the home interface](screenshots/Garden.PNG)  
+![Example of the home interface](screenshots/Insight.PNG)  
+
 ## ✨ Features
 
 - 🕒 Customizable Pomodoro timer (5, 20, 25, 30, 60 minutes)
