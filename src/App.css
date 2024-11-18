@@ -1,0 +1,353 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  min-height: 100vh;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.timer {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.stats {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.reward {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #4CAF50;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+  animation: popIn 0.3s ease-out;
+  color: white;
+}
+
+.reward h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.reward p {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.reward button {
+  background-color: #4CAF50;
+  margin-top: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.reward button:hover {
+  background-color: #45a049;
+}
+
+@keyframes popIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.duration-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.duration-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  padding: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.duration-buttons-container::-webkit-scrollbar {
+  display: none;
+}
+
+.duration-btn {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Playfair Display', serif;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: min-content;
+}
+
+.duration-btn:hover {
+  background-color: #45a049;
+}
+
+.duration-btn.active {
+  background-color: #45a049;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.custom-duration-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.custom-duration-container input {
+  padding: 0.8rem;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  width: 120px;
+}
+
+.custom-duration-container input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+  .duration-buttons-container {
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.volume-control input[type="range"] {
+  width: 100px;
+  height: 4px;
+  background: #4CAF50;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-control label {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.garden-section {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.garden-section h3 {
+  color: #4CAF50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.garden-progress {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  min-height: 100px;
+}
+
+.plant-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.plant-container:hover {
+  transform: scale(1.1);
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.plant {
+  font-size: 1.5rem;
+  animation: growPlant 0.5s ease-out;
+}
+
+@keyframes growPlant {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Add this to make the garden section responsive */
+@media (max-width: 600px) {
+  .garden-grid {
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  }
+  
+  .plant {
+    font-size: 1.2rem;
+  }
+}
+
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(0deg, #1a1a1a 0%, rgba(26, 26, 26, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.nav-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(76, 175, 80, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 150px;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+.nav-btn:hover {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.nav-btn.active {
+  background-color: #4CAF50;
+}
