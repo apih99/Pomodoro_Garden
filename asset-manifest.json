@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Pomodoro_Garden/static/css/main.8f1144da.css",
+    "main.js": "/Pomodoro_Garden/static/js/main.8ca8e5d8.js",
+    "static/js/453.0a9a0de8.chunk.js": "/Pomodoro_Garden/static/js/453.0a9a0de8.chunk.js",
+    "index.html": "/Pomodoro_Garden/index.html",
+    "main.8f1144da.css.map": "/Pomodoro_Garden/static/css/main.8f1144da.css.map",
+    "main.8ca8e5d8.js.map": "/Pomodoro_Garden/static/js/main.8ca8e5d8.js.map",
+    "453.0a9a0de8.chunk.js.map": "/Pomodoro_Garden/static/js/453.0a9a0de8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f1144da.css",
+    "static/js/main.8ca8e5d8.js"
+  ]
+}
