@@ -30,7 +30,6 @@ function ProductivityInsights({ stats }) {
   const getRecommendations = () => {
     const recommendations = [];
     const successRate = getSuccessRate();
-    const optimalDuration = getOptimalDuration();
 
     if (successRate < 70) {
       recommendations.push("Try shorter sessions to build momentum");

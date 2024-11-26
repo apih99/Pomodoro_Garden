@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Garden from './components/Garden';
 import ProductivityInsights from './components/ProductivityInsights';
 import './App.css';
@@ -26,6 +26,26 @@ function App() {
   });
 
   const durations = [5, 20, 25, 30, 60];
+
+  const handleSessionComplete = useCallback(() => {
+    const newSession = {
+      duration: selectedDuration,
+      completedAt: new Date(),
+      successful: true
+    };
+
+    setProductivityStats(prev => {
+      const lastSession = prev.lastSessionDate ? new Date(prev.lastSessionDate).toDateString() : null;
+      const isConsecutive = lastSession === new Date(Date.now() - 86400000).toDateString();
+
+      return {
+        completedSessions: [...prev.completedSessions, newSession],
+        totalSessions: prev.totalSessions + 1,
+        consecutiveDays: isConsecutive ? prev.consecutiveDays + 1 : 1,
+        lastSessionDate: new Date()
+      };
+    });
+  }, [selectedDuration]);
 
   useEffect(() => {
     let interval;
@@ -64,7 +84,7 @@ function App() {
     }
 
     return () => clearInterval(interval);
-  }, [isActive, minutes, seconds, selectedDuration, highScore]);
+  }, [isActive, minutes, seconds, selectedDuration, highScore, handleSessionComplete]);
 
   const toggleTimer = () => {
     setIsActive(!isActive);
@@ -95,27 +115,6 @@ function App() {
   const getRandomPlant = () => {
     const plants = ['🌱', '🌿', '🌸', '🌺', '🌻', '🌹', '🌷', '🍀'];
     return plants[Math.floor(Math.random() * plants.length)];
-  };
-
-  const handleSessionComplete = () => {
-    const newSession = {
-      duration: selectedDuration,
-      completedAt: new Date(),
-      successful: true
-    };
-
-    setProductivityStats(prev => {
-      const today = new Date().toDateString();
-      const lastSession = prev.lastSessionDate ? new Date(prev.lastSessionDate).toDateString() : null;
-      const isConsecutive = lastSession === new Date(Date.now() - 86400000).toDateString();
-
-      return {
-        completedSessions: [...prev.completedSessions, newSession],
-        totalSessions: prev.totalSessions + 1,
-        consecutiveDays: isConsecutive ? prev.consecutiveDays + 1 : 1,
-        lastSessionDate: new Date()
-      };
-    });
   };
 
   return (
@@ -181,8 +180,10 @@ function App() {
         </div>
       ) : currentPage === 'garden' ? (
         <Garden garden={garden} />
-      ) : (
+      ) : currentPage === 'insights' ? (
         <ProductivityInsights stats={productivityStats} />
+      ) : (
+        <div>Something went wrong</div>
       )}
 
       <nav className="bottom-navigation">
